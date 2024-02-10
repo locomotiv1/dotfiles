@@ -12,4 +12,4 @@ fi
 swww query || swww init
 
 #change-wallpaper using swww
-swww img ${DIR}/${RANDOMPICS} --transition-fps 30 --transition-type any --transition-duration 3
+swww init swww img ${DIR}/${RANDOMPICS} --transition-fps 30 --transition-type any --transition-duration 3

@@ -12,4 +12,4 @@ fi
 swww query || swww init
 
 #change-wallpaper using swww
-swww init swww img ${DIR}/${RANDOMPICS} --transition-fps 30 --transition-type any --transition-duration 3
+swww img ${DIR}/${RANDOMPICS} --transition-fps 60 --transition-type grow --transition-duration 1 --transition-pos 2470,1400 #position works only on 1440p

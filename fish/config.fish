@@ -1,8 +1,8 @@
 set -g fish_greeting
 
-if status is-interactive
-    starship init fish | source
-end
+# if status is-interactive
+#     starship init fish | source
+# end
 
 # List Directory
 alias ls="lsd"

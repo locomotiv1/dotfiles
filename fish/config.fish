@@ -1,8 +1,8 @@
 set -g fish_greeting
 
-# if status is-interactive
-#     starship init fish | source
-# end
+# if status is-interactive        \
+#     starship init fish | source  \   this was overriting my prompt with: "~via v21.6.1" for some reason and i couldn't change it
+# end                               \
 
 # List Directory
 alias ls="lsd"

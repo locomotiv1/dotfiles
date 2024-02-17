@@ -1,4 +1,4 @@
-Hi :D
+Highly inspired (to say the least) by https://github.com/prasanthrangan/hyprdots
 
 ![240213_17h20m38s_screenshot](https://github.com/locomotiv1/dotfiles/assets/140397959/c59467bd-a261-4b45-b24e-8d02bbd59853)
 

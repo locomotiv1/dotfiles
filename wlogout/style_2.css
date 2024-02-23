@@ -5,9 +5,9 @@
 
 /* @import "$HOME/.config/waybar/themes/${wbarTheme}.css"; */
 
-window {
-    background-color: ${WindBg};
-}
+/* window {
+    background-color: ${WindBg};   // This makes background transparent
+} */
 
 button {
     color: white;

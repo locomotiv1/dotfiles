@@ -8,15 +8,15 @@
 }
 
 window#waybar {
-    background: transparent;                 /* it was black before */
+    background: transparent;
 }
-
+/* 
 tooltip {
     background: #35343d;
     color: @main-fg;
     border-radius: 10px;
     border-width: 0px;
-}
+} */
 
 #workspaces button {       /* button when its workspace is NOT currently in use */
     box-shadow: none;
@@ -50,7 +50,7 @@ tooltip {
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
-
+/* 
 #taskbar button {
     box-shadow: none;
 	text-shadow: none;
@@ -83,7 +83,7 @@ tooltip {
     padding-right: 4px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
+} */
 
 #backlight,
 #battery,

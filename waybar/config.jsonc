@@ -264,7 +264,7 @@
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
-        "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
+        "on-click": "/home/kacper/dotfiles/rofi/powermenu/type-5/powermenu.sh",
         "interval" : 86400, // once every day
         "tooltip": true
     },

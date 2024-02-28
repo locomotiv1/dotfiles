@@ -138,6 +138,9 @@ tooltip {
     color: #ddf57f;
 }
 
+#pulseaudio{
+    color: #d8aa6e;
+}
 #workspaces,
 #taskbar {
     padding: 0px;

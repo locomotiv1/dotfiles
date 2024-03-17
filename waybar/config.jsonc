@@ -150,6 +150,7 @@
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
     },
+
     "bluetooth": {
     "format": "",
     "format-disabled": "",
@@ -162,7 +163,9 @@
     "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%"
-    },    "pulseaudio": {
+    },  
+      
+    "pulseaudio": {
         "format": "{icon} {volume}",
         "format-muted": "婢",
         "on-click": "pavucontrol -t 3",
@@ -225,8 +228,6 @@
         "format": "{}",
         "exec": "echo ; echo 󰆊 switch wallpaper",
         "on-click": "/home/kacper/.config/hypr/scripts/changewallpaper.sh",
-        // "on-click-right": "~/.config/hypr/scripts/swwwallpaper.sh -p",
-        // "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/swwwallselect.sh",
         "interval" : 86400, // once every day
         "tooltip": true
     },

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 if [ -z "$XDG_PICTURES_DIR" ] ; then
-    XDG_PICTURES_DIR="$HOME/Pictures"
+    XDG_PICTURES_DIR="$HOME/Obrazy/"
 fi
 
 ScrDir=`dirname "$(realpath "$0")"`

@@ -52,7 +52,7 @@ if [[ "$theme" == *'type-1'* ]]; then
 elif [[ "$theme" == *'type-3'* ]]; then
 	list_col='1'
 	list_row='5'
-	win_width='120px'
+	win_width='120px'$
 elif [[ "$theme" == *'type-5'* ]]; then
 	list_col='1'
 	list_row='5'

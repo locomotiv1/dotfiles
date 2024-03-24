@@ -16,8 +16,8 @@
 // positions generated based on config.ctl //
 
     "modules-left": ["hyprland/workspaces","hyprland/window"],
-	"modules-center": ["clock"],
-    "modules-right": ["custom/l_end", "cpu","memory", "pulseaudio", "custom/r_end", "tray","battery", "custom/spotify", "custom/updates", "custom/wallchange","custom/power"],
+  	"modules-center": ["clock"],
+    "modules-right": ["custom/l_end", "cpu","memory", "pulseaudio", "custom/r_end", "tray","battery", "custom/spotify"],
 
 
 // sourced from modules based on config.ctl //
@@ -57,7 +57,6 @@
 
     "clock": {
         "format": "{:%R 󰃭 %d·%m·%y}",
-        "format-alt": "{:%I:%M %p}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",

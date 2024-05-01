@@ -24,3 +24,6 @@ abbr mkdir 'mkdir -p'
 # Fixes "Error opening terminal: xterm-kitty" when using the default kitty term to open some programs through ssh
 alias ssh='kitten ssh'
 fish_add_path /home/kacper/.spicetify
+
+# Created by `pipx` on 2024-03-26 14:18:16
+set PATH $PATH /home/kacper/.local/bin

@@ -2,7 +2,7 @@
         "format": "{icon} {volume}",
         "format-muted": "婢",
         "on-click": "/home/kacper/dotfiles/rofi/applets/bin/volume.sh",
-        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
+        "on-click-right": "~/.config/hypr/scripts/volumecontrol.sh -o m",
         "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
         "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
         "tooltip-format": "{icon} {desc} // {volume}%",

@@ -42,7 +42,8 @@
             "(.*)Visual Studio Code": "Code 󰨞",
             "(.*) — Dolphin": "$1 󰉋",
             "(.*)Spotify": "Spotify 󰓇",
-            "(.*)Steam": "Steam 󰓓"
+            "(.*)Steam": "Steam 󰓓",
+            "(.*)LibreWolf": "Libre Wolf",
         },
         "max-length": 1000
     },

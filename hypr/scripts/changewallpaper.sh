@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=/home/kacper/desktop-wallpapers/2560x1440/
+DIR=/home/kacper/desktop-wallpapers/
 PICS=($(ls ${DIR}))
 
 RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}

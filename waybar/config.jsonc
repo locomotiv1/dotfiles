@@ -17,7 +17,7 @@
 
     "modules-left": ["hyprland/workspaces","hyprland/window"],
   	"modules-center": ["clock"],
-    "modules-right": ["custom/l_end", "cpu","memory", "pulseaudio", "custom/r_end", "custom/spotify"],
+    "modules-right": ["custom/l_end", "cpu","memory", "custom/r_end", "custom/spotify"],
 
 
 // sourced from modules based on config.ctl //

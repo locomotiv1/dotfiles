@@ -27,3 +27,7 @@ fish_add_path /home/kacper/.spicetify
 
 # Created by `pipx` on 2024-03-26 14:18:16
 set PATH $PATH /home/kacper/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

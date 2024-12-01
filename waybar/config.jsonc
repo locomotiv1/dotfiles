@@ -36,7 +36,6 @@
         "separate-outputs": true,
         "rewrite": {
             "kacper@archlinux:(.*)": "$1 ",
-            // "(.*) — Mozilla Firefox": "$1 󰈹",   //shows the exact place at firefox(youtebe, reddit etc) sometimes including very long links
             "(.*)Mozilla Firefox": "Firefox 󰈹",
             "(.*) - Visual Studio Code": "$1 󰨞",
             "(.*)Visual Studio Code": "Code 󰨞",

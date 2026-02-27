@@ -1,0 +1,7 @@
+{
+    "diagnostics.globals": [
+        "mp",
+        "tag_file",
+        "check_path"
+    ]
+}

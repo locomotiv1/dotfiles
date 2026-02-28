@@ -122,9 +122,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # --- LAYOUT & SPLITTING -------------------------------------------------------
-# Split Orientation
-# bindsym $mod+h split h
-# bindsym $mod+v split v
+# Auto split script
 exec_always --no-startup-id i3-auto-tiling
 
 # Layout Styles

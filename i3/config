@@ -140,37 +140,60 @@ bindsym $mod+space focus mode_toggle
 # Drag via titlebar
 tiling_drag modifier titlebar
 
-# --- WORKSPACES ---------------------------------------------------------------
-# Switch to Workspace [cite: 17]
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5 
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+# ==========================================
+# Monitor Assignments
+# ==========================================
+# Bind workspaces 1-9 to HDMI-A-0 (Left/Main)
+workspace "1:1" output HDMI-A-0
+workspace "2:2" output HDMI-A-0
+workspace "3:3" output HDMI-A-0
+workspace "4:4" output HDMI-A-0
+workspace "5:5" output HDMI-A-0
+workspace "6:6" output HDMI-A-0
+workspace "7:7" output HDMI-A-0
+workspace "8:8" output HDMI-A-0
+workspace "9:9" output HDMI-A-0
 
-# Move Window to Workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+# Bind workspaces 11-19 to DisplayPort-2
+workspace "11:1" output DisplayPort-2
+workspace "12:2" output DisplayPort-2
+workspace "13:3" output DisplayPort-2
+workspace "14:4" output DisplayPort-2
+workspace "15:5" output DisplayPort-2
+workspace "16:6" output DisplayPort-2
+workspace "17:7" output DisplayPort-2
+workspace "18:8" output DisplayPort-2
+workspace "19:9" output DisplayPort-2
+# ==========================================
+# Monitor-Aware Workspace Switching
+# ==========================================
+bindsym $mod+1 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 1
+bindsym $mod+2 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 2
+bindsym $mod+3 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 3
+bindsym $mod+4 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 4
+bindsym $mod+5 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 5
+bindsym $mod+6 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 6
+bindsym $mod+7 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 7
+bindsym $mod+8 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 8
+bindsym $mod+9 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh switch 9
 
-# Monitor Assignments 
-workspace 1 output HDMI-A-0
-workspace 2 output HDMI-A-0
-workspace 3 output HDMI-A-0
-workspace 4 output HDMI-A-0
-workspace 5 output DisplayPort-1
+# ==========================================
+# Monitor-Aware Window Moving
+# ==========================================
+bindsym $mod+Shift+1 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 1
+bindsym $mod+Shift+2 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 2
+bindsym $mod+Shift+3 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 3
+bindsym $mod+Shift+4 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 4
+bindsym $mod+Shift+5 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 5
+bindsym $mod+Shift+6 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 6
+bindsym $mod+Shift+7 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 7
+bindsym $mod+Shift+8 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 8
+bindsym $mod+Shift+9 exec --no-startup-id ~/dotfiles/scripts/ws_action.sh move 9
+
+# Send window to corresponding workspace on the other monitor
+bindsym $mod+o exec --no-startup-id ~/dotfiles/scripts/move_mirror.sh
+# Swap focus between monitors using Alt+Tab
+bindsym Mod1+Tab focus output next
 
 # --- RESIZE MODE --------------------------------------------------------------
 bindsym $mod+r mode "resize"
@@ -199,4 +222,5 @@ bar {
     status_command i3status
     font pango:monospace 7
     position top
+    strip_workspace_numbers yes
 }

@@ -38,6 +38,9 @@ exec --no-startup-id dex --autostart --environment i3
 # Network Manager Applet [cite: 10]
 exec --no-startup-id nm-applet
 
+# Notification Daemon
+exec --no-startup-id dunst
+
 # Compositor (Transparency/Shadows) [cite: 13]
 exec --no-startup-id picom -b --backend glx
 
@@ -59,12 +62,21 @@ bindsym $mod+z exec alacritty
 bindsym $mod+f exec firefox
 
 # Application Launcher (dmenu) [cite: 13]
-#bindsym $mod+a exec --no-startup-id i3-dmenu-desktop
 # Start Rofi (Application Launcher)
 bindsym $mod+a exec --no-startup-id rofi -show drun -show-icons
 
-# Screenshot (Maim + Xclip) [cite: 13]
-bindsym --release $mod+Shift+S exec "maim -s | xclip -selection clipboard -t image/png"
+# --- SCREENSHOTS --------------------------------------
+# 1. Selection -> Clipboard
+bindsym --release $mod+Shift+s exec --no-startup-id "maim -s | xclip -selection clipboard -t image/png && notify-send 'Screenshot' 'Selection copied to clipboard!'"
+
+# 2. Selection -> File
+bindsym --release $mod+Ctrl+s exec --no-startup-id "maim -s ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send 'Screenshot' 'Selection saved to file!'"
+
+# 3. Current Monitor -> Clipboard
+bindsym --release $mod+Shift+m exec --no-startup-id ~/dotfiles/scripts/screenshot.sh clipboard
+
+# 4. Current Monitor -> File
+bindsym --release $mod+Ctrl+m exec --no-startup-id ~/dotfiles/scripts/screenshot.sh file
 
 # --- KEYBINDINGS: SYSTEM CONTROL ----------------------------------------------
 # Screen Lock

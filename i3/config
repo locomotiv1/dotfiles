@@ -25,6 +25,17 @@ set $ws10 "10"
 # Font for window titles and bar [cite: 5]
 font pango:monospace 8
 
+# --- GAPS ---------------------------------------------------------------------
+# Set the size of the gaps (in pixels)
+gaps inner 10
+gaps outer 0
+
+# Smart Gaps (Optional)
+smart_gaps on
+
+# Smart Borders (Optional)
+smart_borders on
+
 # Window Borders [cite: 10]
 # Tiled windows: no title bar (pixel border only)
 for_window [tiling] border pixel 4

@@ -63,7 +63,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Monitor Setup (Dual Monitors) 
 # HDMI-A-0 (Left/Main): 1440p @ 144Hz | DisplayPort-2 (Right): 1080p @ 60Hz
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144 --primary --output DisplayPort-2 --mode 1920x1080 --rate 60 --right-of HDMI-A-0
+exec_always --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144 --primary --output DisplayPort-2 --mode 1920x1080 --rate 60 --right-of HDMI-A-0
 
 # --- KEYBINDINGS: APPS --------------------------------------------------------
 # Terminal
@@ -146,7 +146,7 @@ bindsym $mod+Shift+Right move right
 
 # --- LAYOUT & SPLITTING -------------------------------------------------------
 # Auto split script
-exec_always --no-startup-id i3-auto-tiling
+exec_always --no-startup-id killall i3-auto-tiling
 
 # Layout Styles
 bindsym $mod+s layout stacking

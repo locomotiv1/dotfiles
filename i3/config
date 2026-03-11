@@ -101,6 +101,12 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# --- EYE SAVER MODE (Redshift) ---
+bindsym $mod+F3 exec --no-startup-id redshift -P -O 2500
+
+# Turn OFF Eye Saver (Reset to default 6500K temperature)
+bindsym $mod+F4 exec --no-startup-id redshift -x
+
 # --- F-KEY functionality -----------------------------------------------------------
 # Volume Up
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga

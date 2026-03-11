@@ -101,13 +101,21 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# --- AUDIO CONTROLS -----------------------------------------------------------
+# --- F-KEY functionality -----------------------------------------------------------
 # Volume Up
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 # Volume Down
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 # Mute Toggle 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+# --- BRIGHTNESS CONTROLS ---
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/dotfiles/scripts/brightness.sh down
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/dotfiles/scripts/brightness.sh up
+# --- MEDIA CONTROLS (Keychron F7 / F8 / F9) ---
+# Note: Requires 'playerctl' installed on your system
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 # (Legacy/Backup Audio Commands) 
 # set $refresh_i3status killall -SIGUSR1 i3status

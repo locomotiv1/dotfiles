@@ -1,0 +1,96 @@
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Search:";
+    drun-display-format: "{name}";
+    disable-history: false;
+    sidebar-mode: false;
+    font: "Noto Sans 12";
+}
+
+* {
+    /* High Contrast Palette */
+    bg-col:  #11111b;          /* Very dark grey/black for the main window */
+    bg-col-light: #2a2b3c;     /* Slightly lighter for the search bar */
+    border-col: #11111b;       /* Invisible border */
+    
+    accent: #89b4fa;           /* Bright blue for highlights */
+    
+    fg-col: #ffffff;           /* Pure white for absolute readability */
+    fg-col-selected: #11111b;  /* Dark text for the selected item */
+    grey: #a6adc8;             /* Brighter grey for the placeholder text */
+
+    /* Global defaults */
+    background-color: transparent;
+    text-color: @fg-col;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 600px;
+    background-color: @bg-col;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 16px; 
+}
+
+mainbox {
+    padding: 24px;
+}
+
+inputbar {
+    background-color: @bg-col-light;
+    border-radius: 8px;
+    padding: 14px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: inherit;
+    text-color: @accent;
+    padding: 0 12px 0 0;
+    font: "Noto Sans Bold 12";
+}
+
+entry {
+    background-color: inherit;
+    text-color: @fg-col;
+    placeholder: "Find applications...";
+    placeholder-color: @grey;
+}
+
+listview {
+    margin: 24px 0 0 0;
+    lines: 6; 
+    columns: 1;
+    fixed-height: true;
+}
+
+element {
+    padding: 12px;
+    border-radius: 8px;
+    spacing: 16px;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: transparent;
+}
+
+/* --- THE READABILITY FIX --- */
+/* The selected row gets a bright background and dark text */
+element selected.normal {
+    background-color: @accent;
+    text-color: @fg-col-selected;
+}
+
+element-icon {
+    size: 28px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}

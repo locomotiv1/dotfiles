@@ -78,8 +78,6 @@ element normal.normal, element alternate.normal {
     background-color: transparent;
 }
 
-/* --- THE READABILITY FIX --- */
-/* The selected row gets a bright background and dark text */
 element selected.normal {
     background-color: @accent;
     text-color: @fg-col-selected;

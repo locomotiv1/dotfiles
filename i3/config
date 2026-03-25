@@ -9,7 +9,7 @@
 # --- VARIABLES ----------------------------------------------------------------
 set $mod Mod4
 
-# Workspace Variables [cite: 17]
+# Workspace Variables 
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -22,7 +22,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # --- VISUALS & FONTS ----------------------------------------------------------
-# Font for window titles and bar [cite: 5]
+# Font for window titles and bar 
 font pango:monospace 8
 
 # --- GAPS ---------------------------------------------------------------------
@@ -30,13 +30,13 @@ font pango:monospace 8
 gaps inner 10
 gaps outer 0
 
-# Smart Gaps (Optional)
+# Smart Gaps 
 smart_gaps on
 
-# Smart Borders (Optional)
+# Smart Borders 
 smart_borders on
 
-# Window Borders [cite: 10]
+# Window Borders 
 # Tiled windows: no title bar (pixel border only)
 for_window [tiling] border pixel 4
 # Floating windows: normal title bar
@@ -72,8 +72,7 @@ bindsym $mod+z exec alacritty
 # Browser
 bindsym $mod+f exec firefox
 
-# Application Launcher (dmenu) [cite: 13]
-# Start Rofi (Application Launcher)
+# Application Launcher 
 bindsym $mod+a exec --no-startup-id rofi -show drun -show-icons
 
 # --- SCREENSHOTS --------------------------------------
@@ -123,13 +122,6 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 
-# (Legacy/Backup Audio Commands) 
-# set $refresh_i3status killall -SIGUSR1 i3status
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # --- WINDOW MOVEMENT & FOCUS --------------------------------------------------
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -160,12 +152,7 @@ bindsym $mod+Shift+Right move right
 
 # --- LAYOUT & SPLITTING -------------------------------------------------------
 # Auto split script
-exec_always --no-startup-id killall i3-auto-tiling
-
-# Layout Styles
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+exec_always --no-startup-id i3-auto-tiling
 
 # Fullscreen Toggle [cite: 15]
 bindsym Mod1+Return fullscreen toggle

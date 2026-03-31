@@ -67,7 +67,7 @@ exec_always --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144
 
 # --- KEYBINDINGS: APPS --------------------------------------------------------
 # Terminal
-bindsym $mod+z exec alacritty
+bindsym $mod+z exec st
 
 # Browser
 bindsym $mod+f exec firefox

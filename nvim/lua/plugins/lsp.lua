@@ -33,9 +33,10 @@ return {
             },
           },
         },
-        -- example:
         pyright = {},
         gopls = {},
+        rust_analyzer = {},
+        clangd = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -83,6 +84,8 @@ return {
         lua = { 'stylua' },
         python = { 'ruff' },
         go = { 'gofumpt', 'goimports' },
+        rust = { 'rustfmt' },
+        cpp = { 'clang-format' },
       },
     },
   },
@@ -102,6 +105,8 @@ return {
         json = { 'jsonlint' },
         go = { 'golangcilint' },
         python = { 'flake8' },
+        rust = { 'clippy' },
+        cpp = { 'cpplint' },
       }
 
       local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })

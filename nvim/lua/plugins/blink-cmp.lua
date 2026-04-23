@@ -29,7 +29,10 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      keymap = {},
+      keymap = {
+        preset = 'default',
+        ['<CR>'] = { 'accept', 'fallback' },
+      },
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'

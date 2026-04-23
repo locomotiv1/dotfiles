@@ -9,7 +9,7 @@ return {
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter-intro`
     config = function()
       -- ensure basic parser are installed
-      local parsers = { 'bash', 'c', 'go', 'gomod', 'gowork', 'gosum', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc' }
+      local parsers = { 'bash', 'c', 'go', 'gomod', 'gowork', 'gosum', 'rust', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc' }
       require('nvim-treesitter').install(parsers)
 
       ---@param buf integer

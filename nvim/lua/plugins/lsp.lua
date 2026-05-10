@@ -46,6 +46,7 @@ return {
         'markdownlint',
         'jsonlint',
         'golangci-lint',
+        'clang-format',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -87,6 +88,7 @@ return {
         go = { 'gofumpt', 'goimports' },
         rust = { 'rustfmt' },
         cpp = { 'clang-format' },
+        c = { 'clang-format' },
       },
     },
   },

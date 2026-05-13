@@ -1,21 +1,22 @@
 #!/bin/bash
 
-# Get the exact workspace ID of the currently focused window
+# Get the active window's workspace ID
 CURRENT_WS=$(hyprctl activewindow -j | jq '.workspace.id')
 
-# Guard against pressing the keybind on an empty desktop (no window focused)
-if [ -z "$CURRENT_WS" ] || [ "$CURRENT_WS" == "null" ]; then
+# Exit if no window is focused or if it's on a special workspace (negative ID)
+if [ -z "$CURRENT_WS" ] || [ "$CURRENT_WS" -le 0 ]; then
     exit 0
 fi
 
-# Calculate the target workspace on the other monitor
-if [ "$CURRENT_WS" -ge 1 ] && [ "$CURRENT_WS" -le 9 ]; then
+# Calculate the equivalent workspace on the other monitor
+if [ "$CURRENT_WS" -le 10 ]; then
     TARGET_WS=$((CURRENT_WS + 10))
-elif [ "$CURRENT_WS" -ge 11 ] && [ "$CURRENT_WS" -le 19 ]; then
+elif [ "$CURRENT_WS" -le 20 ]; then
     TARGET_WS=$((CURRENT_WS - 10))
 else
-    exit 0
+    # Do nothing if somehow above 20
+    exit 0 
 fi
 
-# Move the window silently (your focus stays on the current screen)
-hyprctl dispatch movetoworkspacesilent $TARGET_WS
+# Move the window to the target workspace and switch your focus to it
+hyprctl dispatch movetoworkspace $TARGET_WS

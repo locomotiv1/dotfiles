@@ -107,7 +107,7 @@ return {
         markdown = { 'markdownlint' },
         json = { 'jsonlint' },
         go = { 'golangcilint' },
-        python = { 'flake8' },
+        --python = { 'flake8' },
         rust = { 'clippy' },
         cpp = { 'cpplint' },
       }

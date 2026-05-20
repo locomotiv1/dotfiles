@@ -65,3 +65,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Open built-in Netrw file explorer in a vertical split on the left
+-- (We use <Cmd>...<CR> so it works cleanly across normal and visual modes)
+vim.keymap.set('n', '\\', '<cmd>Lexplore 30<CR>', { desc = 'Toggle Netrw Explorer' })
+-- -- [[ Netrw Tweaks ]]
+-- -- Hide the massive help banner at the top
+-- vim.g.netrw_banner = 0
+--
+-- -- Use tree-style listing (like Neo-tree or NERDTree) instead of flat listing
+-- vim.g.netrw_liststyle = 3
+--
+-- -- Hide hidden files (you can press 'gh' while inside Netrw to toggle them on/off)
+-- -- This hides files starting with a dot, and the .git/ folder
+-- vim.g.netrw_list_hide = vim.fn.netrw_gitignore(1) .. [[,\(^\|\s\s\)\zs\.\S\+]]

@@ -27,6 +27,9 @@ vim.o.expandtab = true
 -- Enable break indent
 vim.o.breakindent = true
 
+vim.o.autoindent = true
+vim.o.smartindent = true
+
 -- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
 
@@ -56,7 +59,12 @@ vim.o.splitbelow = true
 --   See `:help lua-options`
 --   and `:help lua-guide-options`
 vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { 
+  tab = '» ', 
+  trail = '·', 
+  nbsp = '␣',
+  leadmultispace = '│ ',
+}
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'

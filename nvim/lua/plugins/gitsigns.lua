@@ -64,27 +64,22 @@ return {
         end
       end, { desc = 'Jump to previous git [c]hange' })
 
-      -- Actions
-      -- visual mode
-      -- Actions
-      -- visual mode
-      map('v', '<leader>gs', function() gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = '[G]it [S]tage hunk' })
-      map('v', '<leader>gr', function() gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = '[G]it [R]eset hunk' })
+      map('v', '<leader>gs', function() gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = '[G]it add -p ([s]tage hunk)' })
+      map('v', '<leader>gr', function() gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = '[G]it restore -p ([r]eset hunk)' })
 
-      -- normal mode
-      map('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[G]it [S]tage hunk' })
-      map('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[G]it [R]eset hunk' })
-      map('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[G]it [S]tage buffer' })
-      map('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[G]it [R]eset buffer' })
-      map('n', '<leader>gd', gitsigns.toggle_deleted, { desc = '[T]oggle git show [d]eleted' })
-      map('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[G]it [P]review hunk' })
-      map('n', '<leader>gi', gitsigns.preview_hunk_inline, { desc = '[G]it preview hunk [I]nline' })
-      map('n', '<leader>gb', function() gitsigns.blame_line { full = true } end, { desc = '[G]it [B]lame line' })
-      map('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [D]iff against index' })
-      map('n', '<leader>gD', function() gitsigns.diffthis '@' end, { desc = '[G]it [D]iff against last commit' })
-      map('n', '<leader>gQ', function() gitsigns.setqflist 'all' end, { desc = '[G]it [Q]uickfix list (all)' })
-      map('n', '<leader>gq', gitsigns.setqflist, { desc = '[G]it [q]uickfix list (hunks)' })
-      -- Text object
+      map('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[G]it add -p ([s]tage hunk)' })
+      map('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[G]it restore -p ([r]eset hunk)' })
+      map('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[G]it add % ([S]tage buffer)' })
+      map('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[G]it restore % ([R]eset buffer)' })
+      map('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = '[G]it restore --staged ([u]ndo stage)' })
+      map('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[G]it diff ([p]review hunk)' })
+      map('n', '<leader>gi', gitsigns.preview_hunk_inline, { desc = '[G]it diff ([i]nline preview)' })
+      map('n', '<leader>gb', function() gitsigns.blame_line { full = true } end, { desc = '[G]it [b]lame line' })
+      map('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [d]iff (against index)' })
+      map('n', '<leader>gD', function() gitsigns.diffthis '@' end, { desc = '[G]it [D]iff HEAD (last commit)' })
+
+      map('n', '<leader>gQ', function() gitsigns.setqflist 'all' end, { desc = '[G]it status ([Q]uickfix all files)' })
+      map('n', '<leader>gq', gitsigns.setqflist, { desc = '[G]it status ([q]uickfix current file)' })
       map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
     end,
   },

@@ -30,7 +30,6 @@ mp.add_forced_key_binding("SPACE", "space_action", function(e)
             if was_paused then
                 mp.set_property_native("pause", true)
             end
-            mp.osd_message("Speed: " .. saved_speed .. "x")
             is_speeding = false
         else
             -- Short tap: tell mpv to toggle pause natively, avoiding silent crashes

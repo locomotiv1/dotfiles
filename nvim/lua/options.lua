@@ -1,6 +1,6 @@
 vim.o.relativenumber = true
 
-vim.o.mouse = 'a'
+vim.o.mouse = ""
 
 vim.o.showmode = false
 

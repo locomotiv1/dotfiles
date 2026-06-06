@@ -1,19 +1,3 @@
--- Alternatively, use `config = function() ... end` for full control over the configuration.
--- If you prefer to call `setup` explicitly, use:
---    {
---        'lewis6991/gitsigns.nvim',
---        config = function()
---            require('gitsigns').setup({
---                -- Your gitsigns configuration here
---            })
---        end,
---    }
---
--- Here is a more advanced example where we pass configuration
--- options to `gitsigns.nvim`.
---
--- See `:help gitsigns` to understand what the configuration keys do
-
 ---@module 'lazy'
 ---@type LazySpec
 return {
@@ -47,7 +31,6 @@ return {
         vim.keymap.set(mode, l, r, opts)
       end
 
-      -- Navigation
       map('n', ']c', function()
         if vim.wo.diff then
           vim.cmd.normal { ']c', bang = true }
@@ -84,4 +67,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et

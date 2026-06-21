@@ -7,7 +7,6 @@ return {
     dependencies = {
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
@@ -38,19 +37,7 @@ return {
         rust_analyzer = {},
         clangd = {},
       }
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        -- ADD FORMATTERS AND LINTERS TO BE AUTO-INSTALLED BY MASON HERE
-        'stylua',
-        'markdownlint',
-        'jsonlint',
-        'golangci-lint',
-        'clang-format',
-      })
-
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
+      
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)

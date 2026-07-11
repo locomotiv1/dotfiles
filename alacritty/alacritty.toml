@@ -1,19 +1,16 @@
 [window]
 opacity = 0.85
 [font]
-size = 16
+size = 15
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "FiraCode Nerd Font"
-style = "Bold"
+family = "JetBrainsMono Nerd Font"
 
 [font.italic]
-family = "FiraCode Nerd Font"
-style = "Italic"
+family = "JetBrainsMono Nerd Font"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
-style = "Bold Italic"
+family = "JetBrainsMono Nerd Font"

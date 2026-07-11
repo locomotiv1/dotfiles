@@ -210,7 +210,7 @@ bindsym --release $mod+Ctrl+m exec --no-startup-id ~/dotfiles/scripts/screenshot
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+Shift+f fullscreen
+    bindsym Mod1+Return fullscreen toggle
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle

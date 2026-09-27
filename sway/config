@@ -62,6 +62,9 @@ bindsym $mod+z exec $term
 bindsym $mod+a exec noctalia msg panel-toggle launcher
 bindsym $mod+f exec firefox
 
+# Wallpaper
+exec_always swaymsg output "*" bg "$(find ~/wallpapers -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | shuf -n 1)" fill
+
 # Window Actions
 bindsym $mod+q kill
 

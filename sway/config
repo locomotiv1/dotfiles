@@ -1,3 +1,6 @@
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -18,26 +21,22 @@ set $term alacritty
 # Your preferred application launcher
 set $menu wmenu-run
 
-# Audio Stack (PipeWire)
-exec pipewire
-exec wireplumber
-exec pipewire-pulse
-
 ### Output configuration
 #
 
 # --- Monitor Setup ---
-# output HDMI-A-1 resolution 2560x1440 position 0,0
-# output DP-3 resolution 1920x1080 position 2560,0
+output HDMI-A-1 resolution 2560x1440 position 0,0
+output DP-3 resolution 1920x1080 position 2560,0
 
 # Set a random wallpaper on reload/startup
 #exec_always --no-startup-id ~/dotfiles/scripts/wallpaper.sh
-output * bg ~/wallhaven-wyv9qx_1920x1080.png fill
+#output * bg ~/wallhaven-wyv9qx_1920x1080.png fill
 
 # Switch focus between monitors
 bindsym Mod1+Tab exec ~/dotfiles/scripts/ws.sh toggle_monitor
+# Move focused container to the corresponding workspace on the other monitor
+bindsym $mod+o exec ~/dotfiles/scripts/move_to_other_monitor.sh
 
-exec --no-startup-id dunst
 default_border pixel 2
 
 ### Idle configuration
@@ -217,9 +216,6 @@ bindsym --release $mod+Ctrl+m exec --no-startup-id ~/dotfiles/scripts/screenshot
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
-    #bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -281,10 +277,7 @@ bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-}
+exec noctalia
 
 include /etc/sway/config.d/*
+
